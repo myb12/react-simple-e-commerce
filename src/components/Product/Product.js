@@ -3,11 +3,11 @@ import './Product.css';
 import { FaCartPlus, FaRegStar, FaStar } from 'react-icons/fa';
 
 
-const Product = ({ product }) => {
+const Product = ({ product, handleCart }) => {
     const { name, img, seller, price, stock, features, star } = product;
-    const ratings = [1, 2, 3, 4, 5];
+
     return (
-        <div className="product">
+        <div className="product" onClick={() => handleCart(product)}>
             <div className="product-image">
                 <img src={img} alt="Product" />
             </div>
@@ -26,16 +26,15 @@ const Product = ({ product }) => {
                     <div>
                         <span className="ratings">
                             {
-                                ratings.map((ratng, i) => i < star ? <FaStar /> : <FaRegStar />)
+                                [...Array(5)].map((ratng, i) => i < star ? <FaStar key={i} /> : <FaRegStar key={i} />)
                             }
                         </span>
                         {
                             features.length ? <h4>Features</h4> : ''
                         }
-
                         <ul className="features">
                             {
-                                features.map(feature => <li>{feature.description}: {feature.value}</li>)
+                                features.map((feature, i) => <li key={i}>{feature.description}: {feature.value}</li>)
                             }
                         </ul>
                     </div>

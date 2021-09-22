@@ -1,0 +1,21 @@
+.cart{
+    width: 70%;
+}
+.cart h3,
+.cart h4{
+    text-align: center;
+}
+.cart p{
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 5px 0;
+}
+.order-total span{
+    color: #b12704;
+    font-size: 17px;
+}
+.cart .btn-regular{
+    margin-top: 20px;
+}
