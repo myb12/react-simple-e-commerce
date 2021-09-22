@@ -1,0 +1,49 @@
+.logo{
+    text-align: center;
+}
+.logo img{
+    height: 80px;
+}
+
+nav{
+    margin-top: 16px;
+    padding-left: 40px;
+    height: 40px;
+    background-color: black;
+}
+
+nav a{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    margin-right: 15px;
+    line-height: 30px;
+    padding: 5px;
+    transition: all 0.2s linear;
+}
+nav a:hover{
+    background-color: #fff;
+    color: black;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+    padding: 20px;
+    color: #fff;
+    font-size: 22px;
+}
+.search-container input{
+    margin-right: 10px;
+    width: 80%;
+    height: 30px;
+    font: 18px;
+    padding-left: 10px;
+}
+.search-container span{
+    color: #f08804;
+    font-weight: 700;
+   
+}
