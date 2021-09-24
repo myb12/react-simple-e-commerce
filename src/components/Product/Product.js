@@ -7,7 +7,7 @@ const Product = ({ product, handleCart }) => {
     const { name, img, seller, price, stock, features, star } = product;
 
     return (
-        <div className="product" onClick={() => handleCart(product)}>
+        <div className="product">
             <div className="product-image">
                 <img src={img} alt="Product" />
             </div>
@@ -20,7 +20,9 @@ const Product = ({ product, handleCart }) => {
                             <p>${price}</p>
                             <p><small>Only {stock} left in stock - order soon</small></p>
                         </div>
-                        <button className="btn-regular"><FaCartPlus className="icon-cart" />Add to cart</button>
+                        <button className="btn-regular" onClick={() => handleCart(product)}>
+                            <FaCartPlus className="icon-cart" />Add to cart
+                        </button>
                     </div>
 
                     <div>

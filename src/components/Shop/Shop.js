@@ -7,6 +7,7 @@ import { addToDb, getStoredCart } from '../../utilities/fakedb';
 const Shop = () => {
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([]);
+    const [displayProducts, setDisplayProducts] = useState([]);
 
     const handleCart = (product) => {
         setCart([...cart, product]);
@@ -16,7 +17,10 @@ const Shop = () => {
     useEffect(() => {
         fetch('./fakeData/products.JSON')
             .then(res => res.json())
-            .then(data => setProducts(data))
+            .then(data => {
+                setProducts(data);
+                setDisplayProducts(data);
+            })
     }, []);
 
     useEffect(() => {
@@ -30,28 +34,32 @@ const Shop = () => {
             savedProduct.quantity = savedItem[key];
             storedInCart.push(savedProduct);
         }
-        // console.log(storedInCart);
 
         setCart(storedInCart);
 
     }, [products]);
 
-    
-    // console.log(totalQuantity);
+    const handleChange = (e) => {
+        const searchTxt = e.target.value.toLowerCase();
+        const searchedProducts = products.filter(product => product.name.toLowerCase().includes(searchTxt));
+        setDisplayProducts(searchedProducts);
+    }
+
     return (
         <>
             <div className="search-container">
-                <input type="text" placeholder="Type here to search" />
+                <input type="text" placeholder="Type here to search" onChange={handleChange} />
             </div>
+
             <div className="shop-container">
                 <div className="product-container">
                     {
-                        products.map(product => <Product key={product.key} handleCart={handleCart} product={product} />)
+                        displayProducts.map(product => <Product key={product.key} handleCart={handleCart} product={product} />)
                     }
 
                 </div>
                 <div className="cart-cotainer">
-                    <Cart cart={cart}  />
+                    <Cart cart={cart} />
                 </div>
             </div>
         </>
