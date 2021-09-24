@@ -1,31 +1,57 @@
 import React from 'react';
-import './Cart.css'
+import './Cart.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
 const Cart = ({ cart }) => {
-   
+    // console.log(cart );
+    // cart.forEach(product => product.quantity ? product.quantity : 1);
+
+    // const totalQuantity = cart.reduce((acc, cur) => acc + cur.quantity, 0);
+    // console.log(totalQuantity);
+    // const totalPrice = cart.reduce((acc, cur) => acc + cur.price, 0);
+    // const totalShipping = cart.reduce((acc, cur) => acc + cur.shipping, 0);
+    // console.log(totalShipping);
+
+    let totalQuantity = 0;
+    let totalPrice = 0;
+    let shipping = 0;
+    for (const product of cart) {
+        if (!product.quantity) {
+            product.quantity = 1;
+        }
+        totalPrice = totalPrice + product.price * product.quantity;
+        totalQuantity += product.quantity;
+        shipping += product.shipping;
+    }
+    const totalBeforeTax = totalPrice + shipping;
+    const tax = totalBeforeTax * 0.10;
+    const grandTotal = totalBeforeTax + tax;
     return (
         <div className="cart">
             <h3>Order Summary</h3>
-            <h4>Items ordered: {cart.length}</h4>
+            <div className="order-quantity">
+                <FontAwesomeIcon icon={faShoppingCart} className="cart-icon" /> {totalQuantity}
+            </div>
             <p>
                 <span>Items:</span>
-                <span>$58.97</span>
+                <span>${totalPrice.toFixed(2)}</span>
             </p>
             <p>
                 <span>Shipping & Handling:</span>
-                <span> $11.98</span>
+                <span> ${shipping.toFixed(2)}</span>
             </p>
             <p>
                 <span>Total before tax:</span>
-                <span>$70.95</span>
+                <span>${totalBeforeTax.toFixed(2)}</span>
             </p>
             <p>
                 <span>Estimated Tax:</span>
-                <span>$7.1</span>
+                <span>${tax.toFixed(2)}</span>
             </p>
             <p className="order-total">
                 <span>Order Total:</span>
-                <span>$78.05</span>
+                <span>${grandTotal.toFixed(2)}</span>
             </p>
             <button className="btn-regular">Review your orders</button>
         </div>

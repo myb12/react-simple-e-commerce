@@ -19,3 +19,15 @@
 .cart .btn-regular{
     margin-top: 20px;
 }
+
+.order-quantity{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    color: #f08804;
+    font-weight: 700;
+    font-size: 25px;
+}
+.cart-icon{
+    margin-right: 5px;
+}
