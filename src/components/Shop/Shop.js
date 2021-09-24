@@ -12,6 +12,7 @@ const Shop = () => {
     const handleCart = (product) => {
         setCart([...cart, product]);
         addToDb(product.key);
+        console.log(cart);
     };
 
     useEffect(() => {
@@ -20,6 +21,7 @@ const Shop = () => {
             .then(data => {
                 setProducts(data);
                 setDisplayProducts(data);
+                console.log(data);
             })
     }, []);
 
@@ -58,7 +60,7 @@ const Shop = () => {
                     }
 
                 </div>
-                <div className="cart-cotainer">
+                <div className="cart-container">
                     <Cart cart={cart} />
                 </div>
             </div>

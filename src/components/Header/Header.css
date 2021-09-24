@@ -6,9 +6,11 @@
 }
 
 nav{
+    display: flex;
+    align-items: center;
     margin-top: 16px;
     padding-left: 40px;
-    height: 40px;
+    height: 50px;
     background-color: black;
 }
 
@@ -26,3 +28,20 @@ nav a:hover{
     color: black;
 }
 
+.nav-icon{
+   display: none;
+}
+
+@media only screen and (max-width:480px) {
+    .nav-item{
+        display: none;
+    }
+
+    .nav-icon{
+        display: inline-block;
+   }
+
+   nav{
+       padding-left: 10px;
+   }
+}

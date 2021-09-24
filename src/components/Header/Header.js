@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaBars } from 'react-icons/fa';
 import Logo from '../../images/logo.png'
 import './Header.css';
 
@@ -11,9 +12,12 @@ const Header = () => {
                 <img src={Logo} alt="" />
             </div>
             <nav>
-                <a href="/shop">Shop</a>
-                <a href="/order-review">Order Review</a>
-                <a href="/manage-inventory">Manage Inventory</a>
+                <a href="/#" className="nav-icon">
+                    <FaBars  />
+                </a>
+                <a href="/shop" className="nav-item">Shop</a>
+                <a href="/order-review" className="nav-item">Order Review</a>
+                <a href="/manage-inventory" className="nav-item">Manage Inventory</a>
             </nav>
         </div>
     );

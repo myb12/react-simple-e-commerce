@@ -9,7 +9,7 @@
     border-right: 1px solid rgba(128, 128, 128, 0.479);
 }
 
-.cart-cotainer{
+.cart-container{
     margin-left: 25px;
 }
 
@@ -28,4 +28,29 @@
     height: 30px;
     font: 18px;
     padding-left: 10px;
+}
+
+
+
+@media only screen and (max-width:768px) {
+    .shop-container{
+        grid-template-columns: 1fr;
+    }
+
+    .cart-container{
+        order: 1;
+        margin-left: 10px;
+        width: 90vw;
+    }
+
+   .product-container{
+    margin-left: 10px;
+    order: 2;
+   }
+}
+
+@media only screen and (max-width:992px) {
+    .product-container{
+        margin-left: 10px;
+    }
 }
