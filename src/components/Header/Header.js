@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaBars } from 'react-icons/fa';
-import Logo from '../../images/logo.png'
+import Logo from '../../images/logo.svg'
 import './Header.css';
 
 
@@ -13,7 +13,7 @@ const Header = () => {
             </div>
             <nav>
                 <a href="/#" className="nav-icon">
-                    <FaBars  />
+                    <FaBars />
                 </a>
                 <a href="/shop" className="nav-item">Shop</a>
                 <a href="/order-review" className="nav-item">Order Review</a>

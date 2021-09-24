@@ -10,7 +10,7 @@ const Shop = () => {
     const [displayProducts, setDisplayProducts] = useState([]);
 
     const handleCart = (product) => {
-        
+
         const newCart = [...cart];
         const existing = cart.find(c => c.key === product.key);
         if (existing) {
@@ -29,7 +29,6 @@ const Shop = () => {
             .then(data => {
                 setProducts(data);
                 setDisplayProducts(data);
-                console.log(data);
             })
     }, []);
 

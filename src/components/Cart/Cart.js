@@ -5,7 +5,6 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
 const Cart = ({ cart }) => {
     
-    console.log(cart);
     // cart.forEach(product => product.quantity ? product.quantity : 1);
 
     // const totalQuantity = cart.reduce((acc, cur) => acc + cur.quantity, 0);

@@ -5,12 +5,17 @@
 }
 
 .product-container{
-    margin-left: 150px;
     border-right: 1px solid rgba(128, 128, 128, 0.479);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .cart-container{
-    margin-left: 25px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    height: 300px;
 }
 
 .search-container {
@@ -39,8 +44,7 @@
 
     .cart-container{
         order: 1;
-        margin-left: 10px;
-        width: 90vw;
+        width: 100vw;
     }
 
    .product-container{
