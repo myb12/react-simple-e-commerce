@@ -2,14 +2,15 @@
     text-align: center;
 }
 .logo img{
-    margin: 16px 0;
-    height: 100px;
-    width: 100px;
+    height: 40px;
+    margin-top: 3px;
+    margin-right: 10px;
 }
 
 nav{
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding-left: 40px;
     height: 50px;
     background-color: black;
@@ -38,7 +39,7 @@ nav a{
     z-index: 9999;
     padding: 10px;
     position: absolute;
-    top: 196px;
+    top: 60px;
     left: 10px;
     background-color: rgba(0, 0, 0, 0.90);
     display: flex;
