@@ -29,10 +29,11 @@ const Cart = ({ cart }) => {
     const grandTotal = totalBeforeTax + tax;
     return (
         <div className="cart">
-            <h3>Order Summary</h3>
+            
             <div className="order-quantity">
                 <FontAwesomeIcon icon={faShoppingCart} className="cart-icon" /> {totalQuantity}
             </div>
+            <h3>Order Summary</h3>
             <p>
                 <span>Items:</span>
                 <span>${totalPrice.toFixed(2)}</span>

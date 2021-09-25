@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaBars } from 'react-icons/fa';
-import { useState } from 'react/cjs/react.development';
 import Logo from '../../images/logo.svg'
 import './Header.css';
 
@@ -10,7 +9,7 @@ const Header = () => {
     const [burgerItem, setBurgerItem] = useState(false);
 
     const handleClick = () => {
-        setBurgerItem(!burgerItem)
+        setBurgerItem(!burgerItem);
     }
 
     return (
@@ -27,9 +26,9 @@ const Header = () => {
                 <a href="/#" className="nav-item">Manage Inventory</a>
             </nav>
             <div className={burgerItem ? 'burger-menu-item burger-menu-visible' : 'burger-menu-item'}>
-                <a href="/#" className="">Shop</a>
-                <a href="/#" className="">Order Review</a>
-                <a href="/#" className="">Manage Inventory</a>
+                <a href="/#" >Shop</a>
+                <a href="/#" >Order Review</a>
+                <a href="/#" >Manage Inventory</a>
             </div>
         </div>
     );
