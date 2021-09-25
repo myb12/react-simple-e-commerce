@@ -6,7 +6,9 @@
   animation: fadeIn 700ms ease-in-out 1s both;
   cursor: pointer;
 }
-
+  .scroll-to-top img{
+    width: 50px;
+  }
 @keyframes fadeIn {
   from {
     opacity: 0;

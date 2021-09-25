@@ -28,7 +28,7 @@ const ScrollToTop = () => {
     }, []);
 
     return (
-        <div className="scroll-to-top">
+        <div className="scroll-to-top" title="Move to top">
             {isVisible && (
                 <div onClick={scrollToTop}>
                     <img
