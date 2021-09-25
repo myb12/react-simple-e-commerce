@@ -24,13 +24,40 @@ nav a{
     padding: 5px;
     transition: all 0.2s linear;
 }
-nav a:hover{
+.nav-item:hover,
+.burger-menu-item a:hover{
     background-color: #fff;
     color: black;
 }
 
 .nav-icon{
    display: none;
+}
+
+.burger-menu-item{
+    z-index: 9999;
+    padding: 10px;
+    position: absolute;
+    top: 196px;
+    left: 10px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    width: 170px;
+    transform: translateX(-200px);
+    transition: transform .15s cubic-bezier(.4,0,.2,1),-webkit-transform .15s cubic-bezier(.4,0,.2,1);
+}
+
+.burger-menu-item a{
+    line-height: 30px;
+    padding: 5px;
+    transition: all 0.2s linear;
+    text-decoration: none;
+    color: #fff;
+}
+
+.burger-menu-visible{
+    transform: translateX(0);
 }
 
 @media only screen and (max-width:480px) {
