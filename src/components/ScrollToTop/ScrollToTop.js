@@ -3,7 +3,7 @@ import './ScrollToTop.css';
 import TopArrow from '../../images/top.png'
 
 const ScrollToTop = () => {
-    const [isVisible, setIsVisible] = useState(true);
+    const [isVisible, setIsVisible] = useState(false);
 
     // Show button when page is scorlled upto given distance
     const toggleVisibility = () => {
