@@ -6,7 +6,7 @@ import Shop from './components/Shop/Shop';
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <Header />
       <Shop />
       <ScrollToTop />
