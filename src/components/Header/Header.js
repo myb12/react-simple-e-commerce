@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaBars } from 'react-icons/fa';
+import { FaBars, FaWindowClose } from 'react-icons/fa';
 import Logo from '../../images/logo.svg'
 import './Header.css';
 
@@ -29,6 +29,7 @@ const Header = () => {
                 </div>
             </nav>
             <div className={burgerItem ? 'burger-menu-item burger-menu-visible' : 'burger-menu-item'}>
+                <FaWindowClose className="icon-close" onClick={handleClick} />
                 <a href="/#" >Shop</a>
                 <a href="/#" >Order Review</a>
                 <a href="/#" >Manage Inventory</a>

@@ -57,6 +57,12 @@ nav a{
     color: #fff;
 }
 
+.icon-close{
+    cursor: pointer;
+    color: #fff;
+    margin-bottom: 16px;
+    margin-left: auto;
+}
 .burger-menu-visible{
     transform: translateX(0);
 }
