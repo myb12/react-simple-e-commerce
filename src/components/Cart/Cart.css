@@ -18,6 +18,10 @@
     font-weight: 700;
     margin: 5px 0;
 }
+
+.cart a{
+    text-decoration: none;
+}
 .order-total span{
     color: #b12704;
     font-size: 17px;

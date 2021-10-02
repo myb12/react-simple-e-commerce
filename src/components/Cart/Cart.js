@@ -3,8 +3,8 @@ import './Cart.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
-const Cart = ({ cart }) => {
-    
+const Cart = ({ cart, children }) => {
+
     // cart.forEach(product => product.quantity ? product.quantity : 1);
 
     // const totalQuantity = cart.reduce((acc, cur) => acc + cur.quantity, 0);
@@ -29,7 +29,7 @@ const Cart = ({ cart }) => {
     const grandTotal = totalBeforeTax + tax;
     return (
         <div className="cart">
-            
+
             <div className="order-quantity">
                 <FontAwesomeIcon icon={faShoppingCart} className="cart-icon" /> {totalQuantity}
             </div>
@@ -54,7 +54,7 @@ const Cart = ({ cart }) => {
                 <span>Order Total:</span>
                 <span>${grandTotal.toFixed(2)}</span>
             </p>
-            <button className="btn-regular">Review your orders</button>
+            {children}
         </div>
     );
 };
