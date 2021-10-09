@@ -31,9 +31,9 @@ const Header = () => {
             </nav>
             <div className={burgerItem ? 'burger-menu-item burger-menu-visible' : 'burger-menu-item'}>
                 <FaWindowClose className="icon-close" onClick={handleClick} />
-                <a href="/#" >Shop</a>
-                <a href="/#" >Order Review</a>
-                <a href="/#" >Manage Inventory</a>
+                <NavLink to="/shop">Shop</NavLink>
+                <NavLink to="/order-review">Order Review</NavLink>
+                <NavLink to="/inventory-management">Manage Inventory</NavLink>
             </div>
         </div>
     );
