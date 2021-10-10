@@ -33,7 +33,7 @@
 .order-quantity{
     position: absolute;
     top: 12px;
-    right: 45px;
+    right: 60px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
