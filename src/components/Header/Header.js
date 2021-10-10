@@ -63,6 +63,15 @@ const Header = () => {
                 <NavLink to="/shop">Shop</NavLink>
                 <NavLink to="/order-review">Order Review</NavLink>
                 <NavLink to="/inventory-management">Manage Inventory</NavLink>
+                <NavLink to="/register">
+                    Register
+                </NavLink>
+                {
+                    user.email ? <span className="log-out" onClick={logOut} >Log out</span> :
+                        <NavLink activeStyle={activeStyle} to="/login">
+                            Login
+                        </NavLink>
+                }
             </div>
         </div>
     );
