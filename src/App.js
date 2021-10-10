@@ -7,6 +7,7 @@ import NotFound from './components/NotFound/NotFound';
 import PlaceOrder from './components/PlaceOrder/PlaceOrder'
 import InventoryManagement from './components/InventoryManagement/InventoryManagement';
 import OrderReview from './components/OrderReview/OrderReview'
+import Login from './components/Login/Login';
 
 
 function App() {
@@ -33,6 +34,9 @@ function App() {
 
           <Route path="/place-order">
             <PlaceOrder></PlaceOrder>
+          </Route>
+          <Route path="/login">
+            <Login></Login>
           </Route>
 
           <Route path="*">
