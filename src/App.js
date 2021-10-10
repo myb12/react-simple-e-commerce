@@ -8,43 +8,53 @@ import PlaceOrder from './components/PlaceOrder/PlaceOrder'
 import InventoryManagement from './components/InventoryManagement/InventoryManagement';
 import OrderReview from './components/OrderReview/OrderReview'
 import Login from './components/Login/Login';
+import Register from './components/Register/Register';
+import AuthProvider from './context/AuthProvider';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Header />
-        <Switch>
-          <Route exact path='/'>
-            <Shop />
-          </Route>
+      <AuthProvider>
+        <Router>
+          <Header />
+          <Switch>
+            <Route exact path='/'>
+              <Shop />
+            </Route>
 
-          <Route path='/shop'>
-            <Shop />
-          </Route>
+            <Route path='/shop'>
+              <Shop />
+            </Route>
 
-          <Route path='/order-review'>
-            <OrderReview />
-          </Route>
+            <Route path='/order-review'>
+              <OrderReview />
+            </Route>
 
-          <Route path='/inventory-management'>
-            <InventoryManagement />
-          </Route>
+            <Route path='/inventory-management'>
+              <InventoryManagement />
+            </Route>
 
-          <Route path="/place-order">
-            <PlaceOrder></PlaceOrder>
-          </Route>
-          <Route path="/login">
-            <Login></Login>
-          </Route>
+            <PrivateRoute path="/place-order">
+              <PlaceOrder></PlaceOrder>
+            </PrivateRoute>
 
-          <Route path="*">
-            <NotFound />
-          </Route>
+            <Route path="/Register">
+              <Register />
+            </Route>
 
-        </Switch>
-      </Router>
+            <Route path="/login">
+              <Login></Login>
+            </Route>
+
+            <Route path="*">
+              <NotFound />
+            </Route>
+
+          </Switch>
+        </Router>
+      </AuthProvider>
       <ScrollToTop />
     </div>
   );

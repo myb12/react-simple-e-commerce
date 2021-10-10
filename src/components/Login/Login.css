@@ -11,19 +11,12 @@
   max-width: 615px;
   padding-bottom: 66px;
   margin-top: 100px;
-  padding-top: 46px;
   text-align: center;
   width: 90%;
 }
-.login-form > .logo {
-  max-width: 30%;
-}
 
-.login-form .btn-regular{
-    
-}
 .login-form > .form {
-  margin-bottom: 98px;
+  margin-bottom: 20px;
   margin-top: 41px;
 }
 
@@ -66,22 +59,28 @@
   font-size: 16px;
 }
 
-button {
-  border-radius: 5px;
-  border: none;
-  color: #fff;
+.login-form-container button {
+  border-radius: 3px;
+  background-color: #f0c14b;
+  border-color: #a88734 #9c7e31 #846a29;
+  color: #111;
+  height:35px;
   cursor: pointer;
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
   font-weight: bold;
   letter-spacing: 1px;
   max-width: 420px;
-  outline: 0;
-  padding: 10px 0;
-  transition: background 0.3s;
   width: 80%;
+  transition: all 0.3s ease;
 }
-button.primary {
+
+.login-form-container button:hover{
+    color: #f0c14b;
+    background-color: black;
+    border: 1px solid black;
+}
+/* button.primary {
   background: #f08804;
 }
 button.primary:hover {
@@ -92,4 +91,4 @@ button.secondary {
 }
 button.secondary:hover {
   background: #f08804;
-}
+} */
