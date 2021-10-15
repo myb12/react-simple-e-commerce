@@ -17,10 +17,15 @@ const Register = () => {
                         <label htmlFor="password">Password</label>
                         <input type="password" name="password" />
                     </div>
-                    <button className="primary">Submit</button>
+                    <div style={{ display: 'flex', justifyContent: 'center' }}>
+                        <button className="btn-regular">Submit</button>
+                    </div>
+
                 </form>
                 <p style={{ marginBottom: '20px' }}>Already have an account? <Link to="/login">Login</Link></p>
-                <button className="primary">Sign in with Google</button>
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <button className="btn-regular">Sign in with Google</button>
+                </div>
             </div>
         </div>
     );

@@ -26,10 +26,14 @@ const Login = () => {
                         <label htmlFor="password">Password</label>
                         <input type="password" name="password" />
                     </div>
-                    <button className="primary">Submit</button>
+                    <div style={{ display: 'flex', justifyContent: 'center' }}>
+                        <button className="btn-regular">Submit</button>
+                    </div>
                 </form>
                 <p style={{ marginBottom: '20px' }}>New to our site? <Link to="/register">Create Account</Link></p>
-                <button onClick={handleGoogleSignIn} className="primary">Sign in with Google</button>
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <button onClick={handleGoogleSignIn} className="btn-regular">Sign in with Google</button>
+                </div>
             </div>
         </div>
     );

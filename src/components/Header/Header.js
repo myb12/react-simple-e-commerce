@@ -16,6 +16,7 @@ const Header = () => {
     const [burgerItem, setBurgerItem] = useState(false);
     const location = useLocation();
     const { user, logOut } = useAuth();
+    console.log(user.photoURL);
 
     const handleClick = () => {
         setBurgerItem(!burgerItem);
@@ -45,16 +46,18 @@ const Header = () => {
                         Register
                     </NavLink>
 
-                    {
-                        user.email ? <span className="log-out" onClick={logOut} >Log out</span> :
-                            <NavLink activeStyle={activeStyle} to="/login" className="nav-item">
-                                Login
-                            </NavLink>
-                    }
-
                 </div>
                 <div className="logo" >
-                    <span style={{ color: "#fff", marginRight: '10px' }}>{user.displayName}</span>
+                    <img style={{ borderRadius: '50%' }} src={user.photoURL} alt="" />
+                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                        <span style={{ color: "#fff", marginRight: '10px' }}>{user.displayName}</span>
+                        {
+                            user.email ? <span className="log-out" onClick={logOut} >Log out</span> :
+                                <NavLink activeStyle={activeStyle} to="/login" className="nav-item">
+                                    Login
+                                </NavLink>
+                        }
+                    </div>
                     <img src={Logo} alt="" />
                 </div>
             </nav>
