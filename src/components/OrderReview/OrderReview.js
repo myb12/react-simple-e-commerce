@@ -7,9 +7,10 @@ import { clearTheCart, removeFromDb } from '../../utilities/fakedb';
 import { useHistory } from 'react-router';
 import './OrderReview.css'
 import { FaExclamationTriangle } from 'react-icons/fa';
+import products from '../../fake_data/products.json';
 
 const OrderReview = () => {
-    const [products] = useProducts();
+
     const [cart, setCart] = useCart(products);
     const history = useHistory();
 

@@ -5,6 +5,7 @@ import './Shop.css';
 import { addToDb } from '../../utilities/fakedb';
 import { Link } from 'react-router-dom';
 import useCart from '../../hooks/useCart';
+import fake_products from '../../fake_data/products.json';
 
 const Shop = () => {
     const [products, setProducts] = useState([]);
@@ -26,12 +27,8 @@ const Shop = () => {
     };
 
     useEffect(() => {
-        fetch('./fakeData/products.json')
-            .then(res => res.json())
-            .then(data => {
-                setProducts(data);
-                setDisplayProducts(data);
-            })
+        setProducts(fake_products);
+        setDisplayProducts(fake_products);
     }, []);
 
     const handleChange = (e) => {
