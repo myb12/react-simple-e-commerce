@@ -5,12 +5,14 @@ import './Shop.css';
 import { addToDb } from '../../utilities/fakedb';
 import { Link } from 'react-router-dom';
 import useCart from '../../hooks/useCart';
-import fake_products from '../../fake_data/products.json';
 
 const Shop = () => {
     const [products, setProducts] = useState([]);
-    const [cart, setCart] = useCart(products);
+    const [cart, setCart] = useCart();
     const [displayProducts, setDisplayProducts] = useState([]);
+    const [pageCount, setPageCount] = useState(0);
+    const [page, setPage] = useState(0);
+    const size = 10;
 
     const handleCart = (product) => {
 
@@ -27,9 +29,18 @@ const Shop = () => {
     };
 
     useEffect(() => {
-        setProducts(fake_products);
-        setDisplayProducts(fake_products);
-    }, []);
+        fetch(`https://evening-springs-35883.herokuapp.com/products?page=${page}&&size=${size}`)
+            .then(res => res.json())
+            .then(data => {
+                setProducts(data.products);
+                setDisplayProducts(data.products);
+                const count = data.count;
+                const numOfPage = Math.ceil(count / size);
+                setPageCount(numOfPage);
+
+            })
+
+    }, [page]);
 
     const handleChange = (e) => {
         const searchTxt = e.target.value.toLowerCase();
@@ -48,6 +59,12 @@ const Shop = () => {
                     {
                         displayProducts.map(product => <Product key={product.key} handleCart={handleCart} product={product} />)
                     }
+
+                    <div className="pagination">
+                        {
+                            [...Array(pageCount)].map((el, i) => <button onClick={() => setPage(i)} key={i} className={page === i ? 'selected' : ''}>{i + 1}</button>)
+                        }
+                    </div>
 
                 </div>
                 <div className="cart-container">

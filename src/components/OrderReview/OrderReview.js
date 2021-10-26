@@ -1,17 +1,14 @@
 import React from 'react';
 import useCart from '../../hooks/useCart';
-import useProducts from '../../hooks/useProducts';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import { clearTheCart, removeFromDb } from '../../utilities/fakedb';
 import { useHistory } from 'react-router';
 import './OrderReview.css'
 import { FaExclamationTriangle } from 'react-icons/fa';
-import products from '../../fake_data/products.json';
 
 const OrderReview = () => {
-
-    const [cart, setCart] = useCart(products);
+    const [cart, setCart] = useCart();
     const history = useHistory();
 
     const handleRemove = (key) => {

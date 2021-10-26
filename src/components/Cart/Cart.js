@@ -33,7 +33,7 @@ const Cart = ({ cart, children }) => {
             <div className="order-quantity">
                 <FontAwesomeIcon icon={faShoppingCart} className="cart-icon" /> {totalQuantity}
             </div>
-            <h3>Order Summary</h3>
+            <h3 style={{ marginTop: 12 }}>Order Summary</h3>
             <p>
                 <span>Items:</span>
                 <span>${totalPrice.toFixed(2)}</span>
