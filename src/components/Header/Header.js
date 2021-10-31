@@ -16,7 +16,6 @@ const Header = () => {
     const [burgerItem, setBurgerItem] = useState(false);
     const location = useLocation();
     const { user, logOut } = useAuth();
-    console.log(user.photoURL);
 
     const handleClick = () => {
         setBurgerItem(!burgerItem);
@@ -39,8 +38,8 @@ const Header = () => {
                     <NavLink activeStyle={activeStyle} to="/order-review" className="nav-item">
                         Order Review
                     </NavLink>
-                    <NavLink activeStyle={activeStyle} to="/inventory-management" className="nav-item">
-                        Manage Inventory
+                    <NavLink activeStyle={activeStyle} to="/my-orders" className="nav-item">
+                      My Orders
                     </NavLink>
                     <NavLink activeStyle={activeStyle} to="/shipping" className="nav-item">
                         Shipping

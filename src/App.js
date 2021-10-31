@@ -5,13 +5,13 @@ import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import Shop from './components/Shop/Shop';
 import NotFound from './components/NotFound/NotFound';
 import PlaceOrder from './components/PlaceOrder/PlaceOrder'
-import InventoryManagement from './components/InventoryManagement/InventoryManagement';
 import OrderReview from './components/OrderReview/OrderReview'
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Shipping from './components/Shipping/Shipping';
+import MyOrders from './components/MyOrders/MyOrders';
 
 
 function App() {
@@ -33,8 +33,8 @@ function App() {
               <OrderReview />
             </Route>
 
-            <Route path='/inventory-management'>
-              <InventoryManagement />
+            <Route path='/my-orders'>
+              <MyOrders />
             </Route>
 
             <PrivateRoute path="/place-order">
@@ -50,7 +50,7 @@ function App() {
             </Route>
 
             <PrivateRoute path="/shipping">
-              <Shipping/>
+              <Shipping />
             </PrivateRoute>
 
             <Route path="*">
